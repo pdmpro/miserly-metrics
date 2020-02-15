@@ -11,18 +11,18 @@ I'm a product manager and a former software engineer. Anyone who has taken that 
 
 Now, that does _not_ mean a product manager should never code. 
 
-* Exploring data science or machine learning? **By all means, code away.** Getting your hands dirty is a great way to experience a litle of what ML engineers and doing daily.
+* Exploring data science or machine learning? **By all means, code away.** Getting your hands dirty is a great way to experience a little of what ML engineers and doing daily.
 * Doing a side project? **Knock yourself out.** Most of the code I write is hobbyist stuff to keep a handful of personal web sites going.
-* Need a custom script or SQL to do some number crunching? Transformatons? Image manipulation? Et cetera? **Go for it.** Being able to toss together a quick Python script or SQL query that does something awesome at work is definitely a superpower of a product manager that has tech chops. No one will
-* Need something in the product itself but simply don't have room in the roadmap or extra dev capacity to get it done? **_WHOA_** Let's talk about this one.
+* Need a custom script or SQL to do some number crunching? Transformatons? Image manipulation? Et cetera? **Go for it.** Being able to toss together a quick Python script or SQL query that does something awesome at work is definitely a superpower of a product manager that has tech chops. 
+* Need something in the product itself but simply don't have room in the roadmap or extra dev capacity to get it done? **_WHOA_...** Let's talk about this one.
 
 There's a pretty simple rule: product managers shouldn't write code that goes into a production system. 
 
 But... what if you're in a hungry little startup and really need to gather some UX metrics about user behavior, but can't find (or afford) an off-the-shelf package that does what you need.
 
-And further... what if said product manager can write JavaScript that is so well-isolated that if it ever failed, it would fail silently and never negatively affect performance or the user in any way. (In fact, I can.)
+And further... what if said product manager can write JavaScript that is so well-isolated that if it ever failed, it would fail silently and never negatively affect performance or the user in any way.
 
-Something like that could be injected into an application without developer involvement (using Google Tag Manager or the like). Marketers use those tools to stick all kinds of stuff onto websites and apps all the time. Why? Because they can be incredibly useful -- in fact, things like analytics tools are simply nonoptional nowadays -- and product engineers don't have to be bothered with the care and feeding of JavaScript snippets. They can instead go about creating new value.
+Something like that could be injected into an application without developer involvement using Google Tag Manager or the like. Marketers use those tools to stick all kinds of third-party stuff onto websites and apps all the time. Why? Because they can be incredibly useful -- in fact, things like analytics tools are simply nonoptional nowadays -- and product engineers don't have to be bothered with the care and feeding of JavaScript snippets. They can instead go about creating new value.
 
 By now, it should sound pretty reasonable that in certain cases, it's not a grave sin for well-isolated JavaScript that does some good job to get injected via a tag manager into a production web app, even if it was written by a lowly product manager.
 
@@ -37,7 +37,7 @@ I've distilled that down into `miserly-metrics`, and now, I'll finally explain i
 ## Documentation
 `miserly-metrics` records DOM events and summarizes them. For instance, it will record all mouse travel, all clicks, all scrolling. It's not recording the individual events, just the amount of something. Moving the pointer 1000 pixels adds 1000 to the mousemove count.
 
-For some user behaviors, it's important to also record the number of times something happened. For instance, if I'm got a nervous habit of wiggling the mouse as a read a web page, that will add up to a huge mousemove metric, but only one actual motion. Recording a "halt" (any pause in pointer travel) in addition to the total number of pixels moved lets us reason better when we're analyzing aggregate data on user behavior. 
+For some user behaviors, it's important to also record the number of times something started and stopped. For instance, if a user has a nervous habit of wiggling the mouse for no reason, she'll inflate the mousemove metric which is counted by total pixels of travel. So, the client also detects when the mouse pauses. By recording a "halt" (any sufficiently-long pause in pointer travel) in addition to the total number of pixels moved lets us reason better when we're analyzing aggregate data on user behavior. 
 
 When it's time to send the metrics to the server, it uses `xhr` to call an endpoint you define. In my case, it's a Lambda that then talks to an RDS instance of MySQL. Easy peasy (as long as you've got CORS enabled.)
 
