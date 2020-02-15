@@ -11,6 +11,7 @@ I'm a product manager and a former software engineer. Anyone who has taken that 
 
 Now, that does _not_ mean a product manager should never code. 
 
+* Exploring data science or machine learning? **By all means, code away.** Getting your hands dirty is a great way to experience a litle of what ML engineers and doing daily.
 * Doing a side project? **Knock yourself out.** Most of the code I write is hobbyist stuff to keep a handful of personal web sites going.
 * Need a custom script or SQL to do some number crunching? Transformatons? Image manipulation? Et cetera? **Go for it.** Being able to toss together a quick Python script or SQL query that does something awesome at work is definitely a superpower of a product manager that has tech chops. No one will
 * Need something in the product itself but simply don't have room in the roadmap or extra dev capacity to get it done? **_WHOA_** Let's talk about this one.
