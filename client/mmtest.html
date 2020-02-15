@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Miserly Metrics test harness</title>
+    <script src="miserly-metrics.js"></script>
+    <script>
+        // set the API endpoint to submit metrics to thusly
+        miserlyMetrics.setEndpoint("//PATH_TO_YOUR_LAMBDA_OR_WHATEVER");
+    </script>
+</head>
+<body>
+    <h1>Trivial implementation of Miserly Metrics</h1>
+    <div>
+        <button onclick="miserlyMetrics.init()">Initialize</button>
+    </div>
+    <div>
+        <button onclick="miserlyMetrics.dump()">Dump collected metrics to console</button>
+    </div>
+    <div>
+        <button onclick="miserlyMetrics.send()">Send to server</button>
+    </div>
+</body>
+</html>
