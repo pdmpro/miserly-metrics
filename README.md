@@ -52,7 +52,7 @@ These are the metrics that worked for us, but with a little bit of JavaScript an
 
 * `client/`
   * `miserly-metrics.js` -- this is the JavaScript client that gathers the metrics and submits them to the server
-  * `mmtest.html` -- a trivial HTML implementation you can use to test the JavaScript (even works just by double-clicking top open it in a browser)
+  * `mmtest.html` -- a trivial HTML implementation you can use to test the JavaScript (you can simply double-click the HTML file to open it in a browser to test everything but the XHR send)
 * `server/`
   * `lambda_function.py` -- the AWS Lambda that receives data from the client (through the AWS API Gateway, which must be CORS-enabled)
   * `mysql_ddl.sql` -- SQL script to create the very simple one-table database that collects metrics
